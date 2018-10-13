@@ -1,0 +1,49 @@
+<!--Perform sorting using orderBy Filter and Hyperlink-->
+<html>
+<head>
+</head>
+<body ng-app="tripti">
+<h1>Filters in AJS</h1><hr/>
+
+<div ng-controller="StudentController">
+    <!--Select sort property:
+        <select ng-model="x">
+            <option>sname</option>
+            <option>course</option>
+        </select>-->
+<br></br>
+
+
+<!--Do you wantin Descending order?
+<input type="checkbox" ng-model="y"/>
+<br></br>-->
+
+<table border="2">
+   <tr><th a href='#' ng-click="x='sname';y=!y;">Student Name </a></th>
+       <th a href='#' ng-click="x='course';y=!y;" >Course Name </a></th>
+   </tr>
+   
+   <tr ng-repeat="item in student|orderBy:x:y">
+   <td>{{item.sname}}</td>
+   <td>{{item.course}}</td>       
+   </tr>
+</table>
+</div>
+
+<script src="angular.js"></script>
+
+<script>
+var app=angular.module("tripti",[]);
+app.controller("StudentController",function($scope)
+{
+$scope.x="sname";
+$scope.y=false;
+$scope.student=[{sname:"Scott",course:"Angular JS"},
+                {sname:"Amal",course:"HTML5"},
+				{sname:"Mithu",course:"CSS3"},
+				{sname:"Rahini",course:"Java Script"}];
+
+});
+</script>
+</body>
+</html>

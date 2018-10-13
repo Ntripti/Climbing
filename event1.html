@@ -1,0 +1,39 @@
+<!--Create a web page to implement login functionality using angular js events-->
+<html>
+<head>
+
+</head>
+<body ng-app="myApp">
+<div ng-controller="DemoController">
+User Name:<input ng-model="uname"/><br></br>
+Passoword:<input type="password" ng-model="pwd"/><br></br>
+<input type="button" ng-click="f1()" value="Login"/>
+<h3 style="color:{{str}}">{{result}}</h3>
+</div>
+<script src="angular.js"></script>
+<script>
+var app=angular.module("myApp",[]);
+app.controller("DemoController",function($scope)
+{
+$scope.uname="";
+$scope.pwd="";
+$scope.result="";
+$scope.str="";
+$scope.f1=function()
+{
+if($scope.uname=="admin"&&$scope.pwd=="admin2018")
+{
+$scope.result="Welcome to Admin";
+$scope.str="green";
+}
+else
+{
+$scope.result="Invalid username or password";
+$scope.str="red";
+}
+};
+
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<html>
+<head>
+<title>The Climbers</title>
+<link href="climing soc logo - new.jpg" rel="shortcut icon"/> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+.t1{
+position:fixed;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+    font-size: 17px;
+}
+
+#myVideo {
+    position:fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+}
+
+.content {
+    position:fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: black;
+    width: 100%;
+    padding: 20px;
+}
+
+#myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+#myBtn:hover {
+    background: #ddd;
+    color: black;
+}
+tr 
+{
+font-family:Comic Sans Ms; font-size:20;color:white;
+}
+.c2 {
+    position: fixed;
+    width: 100%;
+    padding:5px;
+	margin:0.1px
+
+}
+
+th 
+{
+font-family:Comic Sans Ms; font-size:20;color:white;
+}
+
+td 
+{
+font-family:Comic Sans Ms; font-size:20;color:aqua;padding:2.5;margin:4;
+}
+
+.c3 {
+    position: fixed;
+    width: 100%;
+    padding:5px;
+	margin:0.1px
+	bottom:0; 
+
+}
+
+img
+{
+//width:200px;
+//height:150px;
+border:2px light pink;
+padding:2px;
+}
+#img1
+{
+transition:width 2s;
+}
+#img2
+{
+transition:width 2s;
+}
+#img3
+{
+transition:width 2s;
+}
+#img4
+{
+transition:width 2s;
+}
+#img5
+{
+transition:width 2s;
+}
+#img6
+{
+transition:width 2s;
+}
+#img7
+{
+transition:width 2s;
+}
+#img8
+{
+transition:width 2s;
+}
+#img1:hover
+{
+width:60%;
+}
+#img2:hover
+{
+width:60%;
+}
+#img3:hover
+{
+width:60%;
+}
+#img4:hover
+{
+width:60%;
+}
+#img5:hover
+{
+width:60%;
+}
+#img6:hover
+{
+width:60%;
+}
+#img7:hover
+{
+width:60%;
+}
+#img8:hover
+{
+width:60%;
+}
+</style>
+</head>
+<body ng-app="myApp">
+<table class="t1"><tr>
+<video autoplay muted loop id="myVideo">
+  <source src="Alberta Canada.mp4" type="video/mp4">
+ 
+</video></tr>
+</table>
+
+<!--<div class="content">
+  
+  
+  <button id="myBtn" onclick="myFunction()">Pause</button>
+</div>
+
+<script>
+var video = document.getElementById("myVideo");
+var btn = document.getElementById("myBtn");
+
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+</script>-->
+<div class="content">
+<table width="100%">
+   <tr>
+      <th><a href="">Home</a></th>
+	  <th><a href="">Publications</a></th>
+	  <th><a href="">Albums</a></th>
+	  <th><a href="">Videos</a></th>
+	  <th><a href="">News</a></th>
+	  <th><a href="">Activities</a></th>
+	  <th><a href="">Contact</a></th>
+	 </tr>
+</table>
+</div>
+<br></br><br></br>
+
+<div class="c2" ng-controller="DemoController">
+     <table border="0" width="80%" align="center">
+        <tr>
+           <th>Climbers</th>
+           <th>Stories</th>
+           <th>Documentry</th>
+        </tr>
+
+		
+        <tr ng-repeat="item in ar">
+           <td><img src="{{item.img}}" height="150" width="200"/></td>
+           <td>{{item.story}}</td>
+           <td><video height="150" width="450"controls >
+               <source src="{{item.documentry}}" type="video/mp4">
+               </video>
+		   </td>
+        </tr>
+     </table>
+</div>
+
+<!--<div class="c3">
+   <table border="0" width="100%" align="bottom">
+      <tr>
+         <th>OUR RECOMMENDED FAVORITES</th>
+		 <th>POPULAR POSTS</th>
+		 <th>FIND IT FAST!</th>
+	     <th>NEWSLETTER SIGNUP</th>
+	  </tr>
+   </table>
+</div>-->
+
+<table>
+<tr><!--<th><img src="imageshhh.jpg" width="468%"/></th>-->
+<th>
+<span>  
+<div style="image-align:left;padding:20px;">                                                                                                                                                                      
+<img src="search.jpg" width="100%"/>
+</div>
+<div style="image-align:left;">
+<a href="contact number.html"><img  id="img1" src="chocolate-sour.jpg" height="30%" width="30%"/></a>
+<a href="http://www.gmail.com"><img id="img2" src="strawberry-rhubarb-pie.jpg" height="30%" width="30%"/></a>
+<a href="http://www.whatsapp.com"><a href="Whatsappnumber.html"><img id="img3" src="circus-animal-layer.jpg" height="30%" width="30%"/></a></a>
+<a href="http://www.facebook.com"><img id="img4" src="snickerdoodles-square.jpg" height="30%" width="30%"/></a>
+<a href="Login.html"><img id="img5" src="cookies-and-cream-cake-.jpg" height="30%" width="30%"/></a>
+<a href="signup.html"><img id="img6" src="easy-chocolate-flower-.jpg" height="30%" width="30%"/></a>
+<a href="http://www.googlemaps.com"><img id="img7" src="circus-animal-no-churn-ice-cream-.jpg" height="30%" width="30%"/></a>
+<img id="img8" src="hydrangea-cakes.jpg" height="30%" width="30%"/>
+</div>
+</span>
+</th>
+</tr>
+</table>
+<script src="angular.js"></script>
+<script>
+var app=angular.module("myApp",[]);
+app.controller("DemoController",function($scope)
+{
+$scope.ar=[{img:"D:/AngularJS/alex-honnold-portrait.jpg",story:"Over the summer, Alex Honnold became the first to free-solo climb the 3,000-foot granite face of El Capitan in California’s Yosemite National Park. During an interview with The North Face, the California-based climber talks about everything from his love of El Capitan to the mice and worms that live inside it.",
+          documentry:"D:/AngularJS/Alex Honnold- My extreme childhood.mp4"},
+          {img:"D:/AngularJS/alex-honnold-portrait 1.jpg",story:"Over",
+          documentry:"D:/AngularJS/Rock Climber Alex Honnold.mp4"},
+		  {img:"D:/AngularJS/Image3.jpg",story:"Over",
+          documentry:"D:/AngularJS/Rock Climber Alex Honnold.mp4"},
+		  {img:"D:/AngularJS/img4.jpg",story:"Over",
+          documentry:"D:/AngularJS/Rock Climber Alex Honnold.mp4"},
+		  {img:"D:/AngularJS/image5.jpg",story:"Over",
+          documentry:"D:/AngularJS/Rock Climber Alex Honnold.mp4"}];
+});
+</script>
+</body>
+</html>

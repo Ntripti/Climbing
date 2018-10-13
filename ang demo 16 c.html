@@ -1,0 +1,49 @@
+<!--Perform sorting using orderBy filter-->
+<html>
+<head>
+</head>
+<body ng-app="tripti">
+<h1>Filters in AJS</h1><hr/>
+
+<div ng-controller="StudentController">
+    Select sort property:
+        <select ng-model="x">
+            <option>sname</option>
+            <option>course</option>
+        </select>
+<br></br>
+
+
+Do you want in Descending order?
+<input type="checkbox" ng-model="y"/>
+<br></br>
+
+<table border="2">
+   <tr><th>Student Name</th>
+       <th>Course Name</th>
+   </tr>
+   
+   <tr ng-repeat="item in student|orderBy:x:y">
+   <td>{{item.sname}}</td>
+   <td>{{item.course}}</td>       
+   </tr>
+</table>
+</div>
+
+<script src="angular.js"></script>
+
+<script>
+var app=angular.module("tripti",[]);
+app.controller("StudentController",function($scope)
+{
+$scope.x="sname";
+$scope.y=false;
+$scope.student=[{sname:"Scott",course:"Angular JS"},
+                {sname:"Amal",course:"HTML5"},
+				{sname:"Mithu",course:"CSS3"},
+				{sname:"Rahini",course:"Java Script"}];
+
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!--Create a web page to implement validation using AJS-->
+<html>
+</head>
+  <style>
+  .c1
+    {
+	  color:red;
+	}
+  </style>
+</head>
+<body ng-app="myApp">
+<div ng-controller="DemoController">
+  <form name="f1" novalidate>
+     <fieldset>
+      First Name:<input name="t1"
+	                    ng-model="fname"
+						ng-required="true"/>
+						
+				<span class="c1" ng-show="f1.t1.$error.required && f1.t1.$dirty">
+				First Name is required
+                </span><br></br>		
+
+
+      Last Name:<input name="t2"
+	                    ng-model="lname"
+						ng-required="true"/>
+						
+				<span class="c1" ng-show="f1.t2.$error.required && f1.t2.$dirty">
+				Last Name is required
+                </span><br></br>		
+
+
+      City Name:<input name="t3"
+	                    ng-model="city"
+						ng-minlength="3"
+						ng-maxlength="10"/>
+						
+				<span class="c1" ng-show="f1.t3.$error.minlength && f1.t3.$dirty">
+				City Name  requires minimum 3 characters
+                </span><br></br>	
+				
+				<span class="c1" ng-show="f1.t3.$error.maxlength && f1.t3.$dirty">
+				City Name  requires maximum 10 characters
+                </span><br></br>	
+
+
+
+      Email ID:<input name="t4"
+	                  type="email"
+					  ng-model="email"/>
+						
+				<span class="c1" ng-show="f1.t4.$error.email && f1.t4.$dirty">
+				Email ID is required
+                </span><br></br>	
+
+
+      Pincode:<input name="t5"
+	                 ng-model="pincode"
+				     ng-pattern="/^\d{6}$/"/>
+						
+				<span class="c1" ng-show="f1.t5.$error.pattern && f1.t1.$dirty">
+				Pincode should be 6 digits
+                </span><br></br>
+
+
+
+        <input type="button"
+		       ng-click="fn_submit()"
+			   ng-disabled="f1.$invalid"
+			   value="Register"/>	
+			   
+     </fieldset>
+  </form>
+</div>
+<script src="angular.js"></script>
+<script>
+var app=angular.module("myApp",[]);
+app.controller("DemoController",function($scope)
+{
+$scope.fname="";
+$scope.lname="";
+$scope.city="";
+$scope.email="";
+$scope.pincode="";
+
+$scope.fn_submit=function()
+{
+alert("Customer Details Accepted");
+};
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<html>
+<head>
+<title>The Climbers</title>
+<link href="climing soc logo - new.jpg" rel="shortcut icon"/> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+       #myvideo {
+       position:alternate;
+       right: 0;
+       bottom: 0;
+       min-width: 100%; 
+       min-height: 100%;
+                }
+
+		.content1 {
+    position:fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color:white;
+    width: 100%;
+    padding: 20px;
+                 }
+				 
+		.content2 {
+    position:fixed;
+    center: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    padding: 5px;
+	
+                 }
+				 
+
+			
+			.content3 {
+    position: fixed;
+    width: 100%;
+    padding:5px;
+	bottom:0;
+    background: rgba(0, 0, 0, 0.5);	
+	color:white;
+	            }
+				
+				
+				/* unvisited link */
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: white;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+
+
+
+
+<<.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+>>
+				
+				
+</style>
+</head>
+<body ng-app="myApp">
+<table><tr>
+<video autoplay muted loop id="myvideo">
+  <source src="360°- Climbing Mount Everest.mp4" type="video/mp4">
+ 
+</video></tr>
+</table>
+
+<table background="pexels-photo-746421.jpeg" height="60%" width="100%">
+<tr>
+<!--<div class="tag-slider">
+<div class="marquee down" id="marquee-down-text">-->
+<td style="font-size:45px;color:darkgray;">The summit is what drives us, but the climb itself is what matters. --- Conrad Anker
+</td>
+<!--</div>
+</div>-->
+</tr>
+</table>
+
+<!--<div class="content">
+  
+  
+  <button id="myBtn" onclick="myFunction()">Pause</button>
+</div>-->
+
+<!--<script>
+var video = document.getElementById("myVideo");
+var btn = document.getElementById("myBtn");
+
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+</script>-->
+<div class="content1">
+<table width="100%">
+   <tr style="font-size:25">
+      <th><a href="">Home</a></th>
+	  <th><a href="">Publications</a></th>
+	  <th><a href="">Albums</a></th>
+	  <th><a href="">Videos</a></th>
+	  <th><a href="">News</a></th>
+	  <th><a href="">Activities</a></th>
+	  <th><div class="dropdown">
+  <button class="dropbtn">Contact</button>
+  <div class="dropdown-content">
+    <a href="#">emailid</a>
+    <a href="#">phone</a>
+    <a href="#">linkedin</a>
+  </div>
+</div>
+	      
+	  </th>
+	 </tr>
+</table>
+</div>
+<br></br><br></br>
+
+
+
+
+
+
+<!--<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>-->
+
+
+
+
+<div class="c2" ng-controller="DemoController">
+     <table background="pexels-photo-691668.jpeg" border="0" width="100%" align="center">
+        <tr>
+           <th>Climbers</th>
+           <th>Stories</th>
+           <th>Documentry</th>
+        </tr>
+
+		
+        <tr ng-repeat="item in ar" style="color:darbrown;font-size:25px;">
+           <td><img src="{{item.img}}" height="250" width="400"/></td>
+           <td>{{item.story}}<input type="button" value="Read More"/></td>
+           <td><video height="250" width="450"controls >
+               <source src="{{item.documentry}}" type="video/mp4">
+               </video>
+		   </td>
+        </tr>
+     </table>
+</div>
+
+
+
+<script src="angular.js"></script>
+<script>
+var app=angular.module("myApp",[]);
+app.controller("DemoController",function($scope)
+{
+$scope.ar=[{img:"D:/AngularJS/alex-honnold-portrait.jpg",story:"Alex J. Honnold (born August 17, 1985) is an American rock climber best known for his free solo ascents of big walls..",
+          documentry:"D:/AngularJS/Alex Honnold- My extreme childhood.mp4"},
+          {img:"D:/AngularJS/chris-sharma.jpg",story:"Chris Omprakash Sharma is known for being the world's first climber to redpoint a 9b (5.15b) route (Jumbo love, 2008) and the second to climb a 9a+ (5.15a) and a 9b+ (5.15c) route (Realization in 2001 and La Dura Dura in 2013). He is also known for climbing the world's first 9a+ (5.15a) and 9b (5.15b) deep-water solo routes (Es Pontàs in 2007 and Alasha in 2017). ",
+          documentry:"D:/AngularJS/Chris Sharma - 3 Degrees Of Separation.mp4"},
+		  {img:"D:/AngularJS/Steph Davis.jpg",story:"Stephanie 'Steph' Davis (born 1973) is an American rock climber, BASE jumper, and wingsuit flyer.",
+          documentry:"D:/AngularJS/Steph Davis Free Solos an Insane Route - Ultimate Rush.mp4"},
+		  {img:"D:/AngularJS/tuhin sarkar.jpg",story:"India’s only Redbull athlete, Tuhin Satarkar is the first Indian climber to redpoint Ganesh, the 8b+ (5.14a) route in Badami, Karnataka.",
+          documentry:"D:/AngularJS/Pioneering new rock climbing lines in India - Red Bull Indian Odyssey.mp4"},
+		  {img:"D:/AngularJS/arunima-sinha.gif",story:"Arunima Sinha (was born in 1988) is the first Female amputee to climb Mount Everest.",
+          documentry:"D:/AngularJS/Arunima Sinha Video on Mount Everest.mp4"}];
+	
+
+$scope.email="";
+		  
+});
+</script>
+
+
+
+<table>
+<tr><!--<th><img src="imageshhh.jpg" width="468%"/></th>-->
+<th>
+<span>  
+<div style="image-align:left;padding:20px;">                                                                                                                                                                      
+<!--<img src="search.jpg" width="100%"/>-->
+</div>
+<div style="image-align:left; padding:20px;margin:5px;">
+<span>
+<a href=""><img  id="img1" src="climb1.jpg" height="20%" width="20%"/></a>
+<a href=""><img id="img2" src="climb3.jpg" height="51%" width="25%"/></a>
+<a href=""><img id="img3" src="climb4.jpg" height="66%" width="25%"/></a>
+<a href=""><img id="img4" src="climb5.jpg" height="37%" width="25%"/></a>
+</span>
+<!--<a href=""><img id="img5" src="cookies-and-cream-cake-.jpg" height="30%" width="30%"/></a>
+<a href=""><img id="img6" src="easy-chocolate-flower-.jpg" height="30%" width="30%"/></a>
+<a href=""><img id="img7" src="circus-animal-no-churn-ice-cream-.jpg" height="30%" width="30%"/></a>
+<img id="img8" src="hydrangea-cakes.jpg" height="30%" width="30%"/>-->
+</div>
+</span>
+</th>
+</tr>
+</table>
+
+<div class="c3">
+   <table  border="0" width="100%" bgcolor="black">
+      <tr style="color:orange;text-align:right">
+         <th>OUR RECOMMENDED FAVORITES</th>
+		 <th>POPULAR POSTS</th>
+		 <th>FIND IT FAST!</th>
+	     <th>NEWSLETTER SIGNUP</th>
+	  </tr>
+	  
+	  <tr style="color:gray;text-align:right">
+	  <td><ul>
+	          <ul><a href="#">Guided Mountaineering & Rock Climbing</a></ul>
+			  <ul><a href="#">Raftring Trips</a></ul>
+	     </ul>
+	  </td>
+	  <td><ul>
+	            <ul><a href="#">Camping & RV</a></ul>
+				<ul><a href="#">International Workers</a></ul>
+	      </ul>
+	  </td>
+	  <td><ul>
+	            <ul><a href="#">Things To Do</a></ul>
+				<ul><a href="#">Where To Visit</a></ul>
+				<ul><a href="#">Events and Festivals</a></ul>
+				<ul><a href="#">Plan Your Trip</a></ul>
+	      </ul>
+	  </td>
+	  <td></ul>
+	            <ul>Subscribing to our mailing list will keep you updated with all of our latest deals and specials!</ul>
+				<ul>Email Address:<input type="email" ng-model="email"/></ul>
+				<!--<ul><input type="button" ng-click="f1()" value="Subscribe"></ul>-->
+				<!--<script src="https://apis.google.com/js/platform.js"></script>
+                <div class="g-ytsubscribe" data-channel="GoogleDevelopers" data-layout="default" data-count="default">
+				</div>-->
+				<!--<input type="button" onclick="(function(btn){var z=document.createElement('script');
+				document.subtomeBtn=btn;z.src='https://www.subtome.com/load.js';document.body.appendChild(z);})(this)" value="Subscribe">-->
+				<input type="button" onclick="(function(btn){var z=document.createElement('script');
+				document.subtomeBtn=btn;z.src='https://www.gmail.com/load.js';document.body.appendChild(z);})(this)" value="Subscribe"></br></br>
+				<div class="topnav">
+                <a class="active" href="#home"></a>
+                <a href="#about"></a>
+                <a href="#contact"></a>
+                <input type="text" placeholder="Search..">
+                </div>
+                <ul><h2>GET IN TOUCH</h2></ul>
+				<ul style="size:4px">HIMALAYAN MOUNTAINEERING INSTITUTE
+				Jawahar Parvat, Darjeeling – 734101. West Bengal, India.</ul>
+				
+	      </ul>
+	  </td>
+	  </tr>
+   </table>
+</div>
+
+</body>
+</html>

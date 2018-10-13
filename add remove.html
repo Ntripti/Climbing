@@ -1,0 +1,105 @@
+<!--<html>
+<head></head>
+<body ng-app="myApp">
+<h3>Processing Array in AJS</h3>
+<hr/>
+<div ng-controller="DemoController">
+Course Name:
+<input type="text" ng-model="input"/>
+<input type="button" value="add course" ng-click="add()"/>
+<input type="button" value="remove course" ng-click="remove()"/>
+<br></br>
+<input type="button" value="Get Details" ng-click="getdetails()"/>
+<br></br>
+<table border="2" width="200" ng-model="table">
+<tr ng-repeat="item in ar"><td>{{item}}</td></tr>
+</table>
+<div>
+<script src="angular.js"></script>
+<script>
+var app=angular.module("myApp",[]);
+app.controller("DemoController",function($scope)
+{
+$scope.ar=["HTML5","CSS3","JQUERY","ANGULAR JS","JAVASCRIPT","BOOTSTRAP"];
+$scope.getdetails=function(){
+    $scope.ar.push($scope.table);
+    $scope.input = "";
+};
+$scope.add=function()
+{
+$scope.ar.push($scope.input);
+};
+$scope.remove = function(index) 
+{
+  $scope.ar.splice(index, 1);
+ };
+
+});
+//Display array in Table
+
+</script>
+</body>
+</html>-->
+
+
+
+<html>
+<head></head>
+<body ng-app="myApp">
+<div ng-controller="DemoController">
+Deptno:<input ng-model="s1"/><br></br>
+Dname:<input ng-model="s2"/><br></br>
+Location:<input ng-model="s3"/>
+<input type="button" ng-click="f1()" value="App Dept"/><br></br>
+<table border="2">
+<tr>
+<th>Deptno</th>
+<th>Dept Name</th>
+<th>Location</th>
+</tr>
+<tr ng-repeat="item in depts">
+<td>{{item.deptno}}</td>
+<td>{{item.dname}}</td>
+<td>{{item.loc}}</td>
+<td><input type="button" ng-click="f2($index)" value="Remove Dept"/></td>
+<td><input type="button" ng-click="f3($index)" value="Select Dept"/></td>
+</tr>
+</table>
+</div>
+<script src="angular.js"></script>
+<script>
+var app=angular.module("myApp",[]);
+app.controller("DemoController",function($scope)
+{
+$scope.s1=0;
+$scope.s2="";
+$scope.s3="";
+$scope.depts=[{deptno:10,dname:"accounts",loc:"Hyd"},
+             {deptno:20,dname:"Engg",loc:"Pune"},
+			 {deptno:30,dname:"Clerk",loc:"Kolkata"},
+			 {deptno:40,dname:"Admin",loc:"Delhi"}];
+$scope.f1=function()
+{
+var obj={};
+ obj.deptno=$scope.s1;
+ obj.dname=$scope.s2;
+ obj.loc=$scope.s3;
+ $scope.depts.push(obj);
+};
+
+ $scope.f2=function(x)
+{
+$scope.depts.splice(x,1);
+};
+$scope.f3=function(x)
+{
+var obj=$scope.depts[x];
+$scope.s1=obj.deptno;
+$scope.s2=obj.dname;
+$scope.s3=obj.loc;
+};
+			 
+});
+</script>
+</body>
+</html>

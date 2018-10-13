@@ -1,0 +1,15 @@
+<html>
+<head></head>
+<body ng-app="myApp">
+<div ng-controller="ProductController">
+Product Name:<input ng-model="pname"/><br></br>
+Unit Price:<input ng-model="price"/><br></br>
+Product Quantity:<input ng-model="quantity"/><br></br>
+<input type="button" ng-click="f1()" value="Get Total"/>
+<br></br>
+<h1>{{total}}</h1>
+</div>
+<script src="angular.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
